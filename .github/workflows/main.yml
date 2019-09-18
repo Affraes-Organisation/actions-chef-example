@@ -15,5 +15,7 @@ jobs:
         c:\opscode\chefdk\bin\chef.bat shell-init powershell | iex;
       shell: powershell
     - name: Verify
-      run: c:\opscode\chefdk\bin\chef.bat exec kitchen verify
+      run: |
+        c:\opscode\chefdk\bin\chef.bat gem install kitchen-localhost
+        c:\opscode\chefdk\bin\chef.bat exec kitchen verify
       shell: powershell
