@@ -9,6 +9,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Install ChefDK
-      run: (& cmd /c); iex (irm https://omnitruck.chef.io/install.ps1); Install-Project -Project chefdk -channel current
+      run: iex (irm https://omnitruck.chef.io/install.ps1); Install-Project -Project chefdk -channel current
     - name: Verify
       run: chef exec kitchen verify
