@@ -10,5 +10,6 @@ jobs:
     - uses: actions/checkout@v1
     - name: Install ChefDK
       run: iex (irm https://omnitruck.chef.io/install.ps1); Install-Project -Project chefdk -channel current
+      shell: powershell
     - name: Verify
       run: chef exec kitchen verify
