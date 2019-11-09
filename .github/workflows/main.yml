@@ -5,18 +5,32 @@ on: [push]
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v1
     - name: Install ChefDK
       run: |
-        iex (irm https://omnitruck.chef.io/install.ps1); Install-Project -Project chefdk -Channel current
-        c:\opscode\chefdk\bin\chef.bat shell-init powershell | iex;
-      shell: powershell
+        curl -L https://www.chef.io/chef/install.sh | sudo bash -s -- -P chefdk
     - name: Verify
+      env:
+        CHEF_LICENSE: accept
       run: |
-        $env:CHEF_LICENSE="accept"
-        c:\opscode\chefdk\bin\chef.bat gem install kitchen-localhost
-        c:\opscode\chefdk\bin\chef.bat exec kitchen verify
-      shell: powershell
+        chef exec kitchen verify
+
+#    runs-on: windows-latest
+#
+#    steps:
+#    - uses: actions/checkout@v1
+#    - name: Install ChefDK
+#      run: |
+#        iex (irm https://omnitruck.chef.io/install.ps1); Install-Project -Project chefdk -Channel current
+#        c:\opscode\chefdk\bin\chef.bat shell-init powershell | iex;
+#      shell: powershell
+#    - name: Verify
+#      env:
+#        CHEF_LICENSE: accept
+#     run: |
+#       c:\opscode\chefdk\bin\chef.bat gem install kitchen-localhost
+#       c:\opscode\chefdk\bin\chef.bat exec kitchen verify
+#      shell: powershell

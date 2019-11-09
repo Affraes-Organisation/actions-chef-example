@@ -1,6 +1,6 @@
 ---
 driver:
-  name: localhost
+  name: exec
 
 provisioner:
   name: chef_zero
@@ -9,7 +9,7 @@ verifier:
   name: inspec
 
 platforms:
-  - name: windows-2019
+  - name: ubuntu-18.04
 
 suites:
   - name: default
