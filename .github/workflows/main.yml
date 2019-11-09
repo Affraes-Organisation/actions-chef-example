@@ -11,11 +11,12 @@ jobs:
     - uses: actions/checkout@v1
     - name: Install ChefDK
       run: |
-        iex (irm https://omnitruck.chef.io/install.ps1); Install-Project -Project chefdk -version 3
+        iex (irm https://omnitruck.chef.io/install.ps1); Install-Project -Project chefdk -Channel current
         c:\opscode\chefdk\bin\chef.bat shell-init powershell | iex;
       shell: powershell
     - name: Verify
       run: |
+        $env:CHEF_LICENSE="accept"
         c:\opscode\chefdk\bin\chef.bat gem install kitchen-localhost
         c:\opscode\chefdk\bin\chef.bat exec kitchen verify
       shell: powershell
