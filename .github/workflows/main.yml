@@ -15,7 +15,7 @@ jobs:
         iex (irm https://omnitruck.chef.io/install.ps1); Install-Project -Project chefdk
         c:\opscode\chefdk\bin\chef.bat shell-init powershell | iex;
     - name: Verify
-      run: c:\opscode\chefdk\bin\chef.bat exec kitchen verify default-windows-2019
+      run: c:\opscode\chefdk\bin\chef.bat exec kitchen verify debug default-windows-2019
 
   ubuntu:
     runs-on: ubuntu-latest
