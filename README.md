@@ -5,9 +5,9 @@ Workflow courtesy of https://github.com/FireEater64/chef-actions
 
 Playground to try-out Chef with Github Actions
 
-### Protected Branches
+[comment]: <> ### Protected Branches
 
-This copy of the repository has protected branches turned on, `master`can only be pushed/merged to upon a successful CI run.
+[comment]: <> This copy of the repository has protected branches turned on, `master`can only be pushed/merged to upon a successful CI run.
 
 :construction: **The following is WORK IN PROGRESS** :construction:
 
