@@ -7,7 +7,12 @@ Playground to try-out Chef with Github Actions
 
 ### Known Issues
 - Windows CI is failing as chef is reporting that the command is too long
-    - chef.bat command currently running with `-D` (`--debug`) flag until I can figure it out
+    - chef.bat command currently running with `-D` (`--debug`) flag until I can figure it out:
+
+``` yml
+- name: Verify
+  run: c:\opscode\chefdk\bin\chef.bat exec kitchen verify --debug default-windows-2019
+```  
 
 <!--
 
