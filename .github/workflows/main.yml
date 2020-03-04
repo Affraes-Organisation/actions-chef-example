@@ -14,11 +14,13 @@ jobs:
       run: |
            . { iwr -useb https://omnitruck.chef.io/install.ps1 } | iex; install -channel stable -project chefdk
            c:\opscode\chefdk\bin\chef.bat shell-init powershell | iex;
+           c:\opscode\chefdk\bin\chef.bat exec --version;
+
     - name: Check Kitchen Version
       run: c:\opscode\chefdk\bin\chef.bat exec kitchen --version
     - name: Diagnose
       run: c:\opscode\chefdk\bin\chef.bat exec kitchen diagnose --all default-windows-2019
-    - name: Verify
+    - name: Converge
       run: |
            c:\opscode\chefdk\bin\chef.bat exec kitchen converge --debug default-windows-2019
            cat .kitchen/logs/kitchen.log
