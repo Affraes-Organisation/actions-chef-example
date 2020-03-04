@@ -26,7 +26,9 @@ jobs:
     - name: Install Chef
       run: curl -L https://www.chef.io/chef/install.sh | sudo bash -s -- -P chefdk
     - name: Verify
-      run: chef exec kitchen verify default-ubuntu-1804
+      run: |
+        chef exec kitchen verify default-ubuntu-1804
+        cat test.txt
 
   mac:
     runs-on: macos-latest
@@ -35,4 +37,6 @@ jobs:
     - name: Install Chef
       run: curl -L https://www.chef.io/chef/install.sh | sudo bash -s -- -P chefdk
     - name: Verify
-      run: chef exec kitchen verify default-macos-1015
+      run: |
+        chef exec kitchen verify default-macos-1015
+        cat test.txt
