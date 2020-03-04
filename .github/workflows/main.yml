@@ -22,8 +22,11 @@ jobs:
     - name: Converge
       run: |
            c:\opscode\chefdk\bin\chef.bat exec kitchen converge --debug default-windows-2019
-           cat .kitchen/logs/kitchen.log
-
+#    - name: Verify
+#      run: c:\opscode\chefdk\bin\chef.bat exec kitchen verify --debug default-windows-2019
+#    - name: Test
+#      run: c:\opscode\chefdk\bin\chef.bat exec kitchen test --debug default-windows-2019
+# Verify and Test fail as well, also fails with and without –debug flag for all three
 
   ubuntu:
     runs-on: ubuntu-latest
