@@ -8,5 +8,5 @@
 # This is an example test, replace it with your own test.
 describe file('/tmp/test.txt') do
   it { should exist }
-  its('content') { should match(%r{/^This is a test file$/}) }
+  its('content') { should match("This is a test file") }
 end
