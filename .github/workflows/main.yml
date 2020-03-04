@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Install Chef
       run: |
-           . { iwr -useb https://omnitruck.chef.io/install.ps1 } | iex; install -channel current -project chefdk
+           . { iwr -useb https://omnitruck.chef.io/install.ps1 } | iex; install -channel stable -project chefdk
            c:\opscode\chefdk\bin\chef.bat shell-init powershell | iex;
     - name: Diagnose
       run: c:\opscode\chefdk\bin\chef.bat exec kitchen diagnose --all default-windows-2019
