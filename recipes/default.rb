@@ -4,12 +4,12 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
-file '/tmp/test.txt' do
+file '/tmp/HelloWorld.txt' do
  content 'This is a test file'
 
  verify do |path|
-  open(path).read.include? 'This is a test file'
+  open(path).read.include? 'Hello World!'
  end
- 
+
  action :create
 end
