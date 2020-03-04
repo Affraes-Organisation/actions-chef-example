@@ -21,6 +21,7 @@ jobs:
       run: c:\opscode\chefdk\bin\chef.bat exec kitchen diagnose --all default-windows-2019
     - name: Converge
       run: |
+           systeminfo /fo csv | ConvertFrom-Csv | select OS*, System*, Hotfix* | Format-List
            ruby --version
            c:\opscode\chefdk\bin\chef.bat exec kitchen converge --debug default-windows-2019
 #    - name: Verify
