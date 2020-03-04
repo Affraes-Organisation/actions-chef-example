@@ -19,7 +19,10 @@ jobs:
     - name: Diagnose
       run: c:\opscode\chefdk\bin\chef.bat exec kitchen diagnose --all default-windows-2019
     - name: Verify
-      run: c:\opscode\chefdk\bin\chef.bat exec kitchen converge --debug default-windows-2019
+      run: |
+           c:\opscode\chefdk\bin\chef.bat exec kitchen converge --debug default-windows-2019
+           cat .kitchen/logs/kitchen.log
+
 
   ubuntu:
     runs-on: ubuntu-latest
