@@ -17,7 +17,7 @@ jobs:
     - name: Diagnose
       run: c:\opscode\chefdk\bin\chef.bat exec kitchen diagnose --all default-windows-2019
     - name: Verify
-      run: c:\opscode\chefdk\bin\chef.bat exec kitchen verify --debug default-windows-2019
+      run: c:\opscode\chefdk\bin\chef.bat exec kitchen test --debug default-windows-2019
 
   ubuntu:
     runs-on: ubuntu-latest
