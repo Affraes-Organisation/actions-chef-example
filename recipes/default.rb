@@ -4,7 +4,7 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
-File 'test.txt' do
- Content 'This is a test file'
+file 'test.txt' do
+ content 'This is a test file'
  action :create
 end
