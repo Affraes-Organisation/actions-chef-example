@@ -5,7 +5,7 @@
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
 file '/tmp/HelloWorld.txt' do
- content 'This is a test file'
+ content 'Hello World!'
 
  verify do |path|
   open(path).read.include? 'Hello World!'
