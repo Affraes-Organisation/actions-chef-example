@@ -3,6 +3,7 @@
 # Recipe:: default
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
+# comment
 
 file '/tmp/HelloWorld.txt' do
  content 'Hello World!'
