@@ -8,5 +8,5 @@
 # This is an example test, replace it with your own test.
 describe file('/tmp/GoodbyeWorld.txt') do
   it { should exist }
-  its('content') { should match("Goodbye World!") }
+  its('content') { should match("Hello World!") }
 end
