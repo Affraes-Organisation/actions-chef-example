@@ -6,7 +6,7 @@
 # found at http://inspec.io/docs/reference/resources/
 
 # This is an example test, replace it with your own test.
-describe file('/tmp/HelloeWorld.txt') do
+describe file('/tmp/HelloWorld.txt') do
   it { should exist }
   its('content') { should match("Hello World!") }
 end
