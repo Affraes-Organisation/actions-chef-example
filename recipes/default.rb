@@ -4,11 +4,11 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
-file '/tmp/HelloWorld.txt' do
- content 'Hello World!'
+file '/tmp/GoodbyeWorld.txt' do
+ content 'Goodbye World!!'
 
  verify do |path|
-  open(path).read.include? 'Hello World!'
+  open(path).read.include? 'Goodbye World!!'
  end
 
  action :create

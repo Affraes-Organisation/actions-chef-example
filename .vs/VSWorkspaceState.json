@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.github",
+    "\\.github\\workflows",
+    "\\recipes",
+    "\\test",
+    "\\test\\smoke",
+    "\\test\\smoke\\default"
+  ],
+  "SelectedNode": "\\test\\smoke\\default\\default_test.rb",
+  "PreviewInSolutionExplorer": false
+}
