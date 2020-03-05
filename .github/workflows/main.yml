@@ -6,24 +6,24 @@ env:
   CHEF_LICENSE: accept
 
 jobs:
-  windows:
-    runs-on: windows-latest
-    steps:
-    - uses: actions/checkout@v1
-    - name: Install Chef
-      run: |
-           . { iwr -useb https://omnitruck.chef.io/install.ps1 } | iex; install -channel stable -project chefdk
-           c:\opscode\chefdk\bin\chef.bat shell-init powershell | iex;
-
-    - name: Check Kitchen Version
-      run: c:\opscode\chefdk\bin\chef.bat exec kitchen --version
-    - name: Diagnose
-      run: c:\opscode\chefdk\bin\chef.bat exec kitchen diagnose --all default-windows-2019
-    - name: Converge
-      run: |
-           systeminfo /fo csv | ConvertFrom-Csv | select OS*, System*, Hotfix* | Format-List
-           ruby --version
-           c:\opscode\chefdk\bin\chef.bat exec kitchen converge --debug default-windows-2019
+#  windows:
+#    runs-on: windows-latest
+#    steps:
+#    - uses: actions/checkout@v1
+#    - name: Install Chef
+#      run: |
+#           . { iwr -useb https://omnitruck.chef.io/install.ps1 } | iex; install -channel stable -project chefdk
+#           c:\opscode\chefdk\bin\chef.bat shell-init powershell | iex;
+#
+#    - name: Check Kitchen Version
+#      run: c:\opscode\chefdk\bin\chef.bat exec kitchen --version
+#    - name: Diagnose
+#      run: c:\opscode\chefdk\bin\chef.bat exec kitchen diagnose --all default-windows-2019
+#    - name: Converge
+#      run: |
+#           systeminfo /fo csv | ConvertFrom-Csv | select OS*, System*, Hotfix* | Format-List
+#           ruby --version
+#           c:\opscode\chefdk\bin\chef.bat exec kitchen converge --debug default-windows-2019
 #    - name: Verify
 #      run: c:\opscode\chefdk\bin\chef.bat exec kitchen verify --debug default-windows-2019
 #    - name: Test
