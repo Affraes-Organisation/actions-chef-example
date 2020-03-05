@@ -30,6 +30,8 @@ jobs:
 #      run: c:\opscode\chefdk\bin\chef.bat exec kitchen test --debug default-windows-2019
 # Verify and Test fail as well, also fails with and without –debug flag for all three
 
+# The following work:
+
   ubuntu:
     runs-on: ubuntu-latest
     steps:

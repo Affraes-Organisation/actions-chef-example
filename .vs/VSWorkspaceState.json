@@ -8,6 +8,6 @@
     "\\test\\smoke",
     "\\test\\smoke\\default"
   ],
-  "SelectedNode": "\\test\\smoke\\default\\default_test.rb",
+  "SelectedNode": "\\.github\\workflows\\main.yml",
   "PreviewInSolutionExplorer": false
 }
